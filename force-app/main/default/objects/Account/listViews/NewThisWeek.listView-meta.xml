@@ -2,11 +2,11 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>NewThisWeek</fullName>
     <columns>ACCOUNT.NAME</columns>
-    <columns>ACCOUNT.SITE</columns>
     <columns>ACCOUNT.PHONE1</columns>
     <columns>ACCOUNT.OWNERSHIP</columns>
     <columns>Active__c</columns>
     <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ACCOUNT.CREATED_DATE</field>
@@ -21,7 +21,7 @@
     <filters>
         <field>ACCOUNT.CREATED_DATE</field>
         <operation>equals</operation>
-        <value>THIS_MONTH</value>
+        <value>LAST_MONTH</value>
     </filters>
     <label>New This Week</label>
 </ListView>
