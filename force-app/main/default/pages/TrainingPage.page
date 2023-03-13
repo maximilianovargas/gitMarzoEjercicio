@@ -1,0 +1,33 @@
+<apex:page standardController="Account" extensions="myControllerExtension">
+    <h1>Hello World</h1> 
+    <apex:pageBlock title="Account Summary">
+        <apex:pageBlockSection >
+            Name: {! Account.Name } <br/>
+            Phone: {! Account.Phone } <br/>
+            Industry: {! Account.Industry } <br/>
+            Revenue: {! Account.AnnualRevenue } <br/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+             <apex:form >
+                <apex:pageBlockTable value="{!opportunitiesWrapp}" var="wrapp">
+                    <apex:column >
+                        <apex:inputCheckbox value="{!wrapp.isSelected}"></apex:inputCheckbox>
+                    </apex:column>
+                    <apex:column value="{!wrapp.anOpportunity.Name}"/>
+                    <apex:column value="{!wrapp.anOpportunity.StageName}"/>
+                    <apex:column value="{!wrapp.anOpportunity.Amount}"/>
+                </apex:pageBlockTable>
+            </apex:form>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            {!greeting} <p/>
+        <apex:form >
+            <apex:inputField value="{!account.name}"/> <p/>
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Save Custom" action="{!saveCustom}"/>
+
+        </apex:form>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:page>

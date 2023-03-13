@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QUO0001_Need_Approval</fullName>
+    <active>true</active>
+    <description>Necesita pasar por un proceso de aprobacion</description>
+    <errorConditionFormula>AND(
+				 ISCHANGED(IsSyncing),
+				 IsSyncing ,
+     Discount &gt;= 0.35,
+    NOT( Approved__c ),
+    NOT(  Rejected__c )
+)</errorConditionFormula>
+    <errorMessage>QUO0001: No se puede sincronizar el presupuesto ya que necesita pasar por un proceso de aprobacion</errorMessage>
+</ValidationRule>
